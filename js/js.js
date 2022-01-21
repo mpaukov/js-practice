@@ -169,3 +169,19 @@ const users = [
     age: 39,
   },
 ];
+
+function array(user) {
+  let obj = {};
+  user.forEach((user) => {
+    const keys = Object.keys(user);
+    keys.forEach((key) => (obj[key] = []));
+  });
+  for (const key in obj) {
+    for (const iterator of user) {
+      obj[key].push(iterator[key]);
+    }
+  }
+  return obj;
+}
+
+console.log(array(users));
